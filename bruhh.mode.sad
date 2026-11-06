@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RASA — BY BRUHH 🥀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #080611;
+    --purple: #a78bfa;
+    --pink: #e9a8dc;
+    --white: #f5efff;
+    --muted: #aaa0bd;
+    --glass: rgba(255,255,255,.055);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(110,60,180,.18), transparent 40%),
+        radial-gradient(ellipse at 85% 70%, rgba(180,70,160,.13), transparent 40%),
+        #080611;
+}
+
+.aurora {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: .2;
+    z-index: -4;
+    pointer-events: none;
+    animation: auroraMove 12s ease-in-out infinite alternate;
+}
+
+.aurora.one {
+    background: #7439c9;
+    top: -180px;
+    left: -180px;
+}
+
+.aurora.two {
+    background: #b94caa;
+    bottom: -200px;
+    right: -180px;
+}
+
+@keyframes auroraMove {
+    to { transform: translate(100px,80px) scale(1.3); }
+}
+
+/* STARS */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: .5;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .15; transform: scale(.7); }
+    to { opacity: .9; transform: scale(1.5); }
+}
+
+/* BLACK HOLE */
+
+.black-hole {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    top: 23%;
+    right: 5%;
+    z-index: -2;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, #000 0%, #000 31%, transparent 33%);
+    filter: drop-shadow(0 0 25px #9b5de5);
+    animation: blackHoleFloat 8s ease-in-out infinite alternate;
+}
+
+.black-hole::before {
+    content: "";
+    position: absolute;
+    inset: 20px -15px;
+    border-radius: 50%;
+    border: 8px solid transparent;
+    border-top-color: #e3a6ff;
+    border-bottom-color: #8b5cf6;
+    filter: blur(2px);
+    box-shadow: 0 0 25px #a855f7;
+    animation: blackHoleSpin 5s linear infinite;
+}
+
+.black-hole::after {
+    content: "";
+    position: absolute;
+    inset: 35px -25px;
+    border-radius: 50%;
+    border: 3px solid rgba(220,160,255,.6);
+    filter: blur(4px);
+    animation: blackHoleSpin 8s linear infinite reverse;
+}
+
+.black-hole-core {
+    position: absolute;
+    inset: 65px;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #000, 0 0 45px rgba(150,80,255,.7);
+}
+
+@keyframes blackHoleSpin {
+    to { transform: rotate(335deg); }
+}
+
+@keyframes blackHoleFloat {
+    from { transform: translateY(-15px); }
+    to { transform: translateY(15px); }
+}
+
+/* SHOOTING STARS */
+
+#spaceCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* INTRO */
+
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #26143e 0%, #100a1e 40%, #05030a 100%);
+}
+
+.intro-screen::before,
+.intro-screen::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(210,170,255,.12);
+    border-radius: 50%;
+    animation: introRing 8s linear infinite;
+}
+
+.intro-screen::before {
+    width: 300px;
+    height: 300px;
+}
+
+.intro-screen::after {
+    width: 450px;
+    height: 450px;
+    animation-duration: 14s;
+    animation-direction: reverse;
+}
+
+@keyframes introRing {
+    from { transform: rotate(0deg) scale(.7); opacity: .2; }
+    to { transform: rotate(360deg) scale(1.3); opacity: .8; }
+}
+
+.intro-light {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #a855f7;
+    filter: blur(130px);
+    opacity: 0;
+    animation: lightAppear 3s ease forwards;
+}
+
+@keyframes lightAppear {
+    to { opacity: .35; transform: scale(1.7); }
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 650px;
+    padding: 30px 15px;
+}
+
+.intro-label {
+    color: #cbb4ec;
+    font-size: 10px;
+    letter-spacing: 5px;
+    opacity: 0;
+    animation: revealUp 1.2s ease 1s forwards;
+}
+
+.intro-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(75px, 18vw, 145px);
+    font-weight: 400;
+    letter-spacing: 15px;
+    margin: 5px 0;
+    color: white;
+    text-shadow: 0 0 35px rgba(192,132,252,.65);
+    opacity: 0;
+    filter: blur(15px);
+    animation: titleReveal 2s ease 1.5s forwards;
+}
+
+@keyframes titleReveal {
+    to { opacity: 1; filter: blur(0); letter-spacing: 22px; }
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    margin: 5px auto 22px;
+    background: linear-gradient(90deg, transparent, #e9c7ff, transparent);
+    box-shadow: 0 0 15px #c084fc;
+    animation: lineReveal 1.5s ease 3s forwards;
+}
+
+@keyframes lineReveal {
+    to { width: 80%; }
+}
+
+.intro-credit {
+    color: #e9b8e6;
+    font-size: 12px;
+    letter-spacing: 6px;
+    opacity: 0;
+    animation: revealUp 1s ease 3.5s forwards;
+}
+
+.intro-content p {
+    color: #c1b5d1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.7;
+    margin: 25px auto;
+    max-width: 420px;
+    opacity: 0;
+    animation: revealUp 1.5s ease 4s forwards;
+}
+
+@keyframes revealUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.intro-button {
+    padding: 14px 32px;
+    border: 1px solid rgba(224,190,255,.55);
+    border-radius: 40px;
+    background: rgba(160,100,220,.12);
+    color: white;
+    letter-spacing: 3px;
+    font-size: 10px;
+    cursor: pointer;
+    opacity: 0;
+    animation: buttonReveal 1s ease 5s forwards;
+    transition: .4s;
+}
+
+@keyframes buttonReveal {
+    to { opacity: 1; }
+}
+
+.intro-button:hover {
+    background: rgba(180,120,255,.3);
+    box-shadow: 0 0 30px rgba(190,130,255,.35);
+    transform: translateY(-3px);
+}
+
+.intro-screen.leaving {
+    animation: cinematicExit 1.5s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes cinematicExit {
+    0% { clip-path: circle(100% at 50% 50%); opacity: 1; }
+    100% { clip-path: circle(0% at 50% 50%); opacity: 0; }
+}
+
+/* NAVBAR */
+
+nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    background: rgba(8,6,17,.35);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    letter-spacing: 5px;
+}
+
+.logo span { color: var(--pink); }
+
+.nav-credit {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--muted);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    padding: 110px 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content { max-width: 750px; }
+
+.eyebrow {
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 6px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(75px, 17vw, 145px);
+    font-weight: 400;
+    letter-spacing: 12px;
+    line-height: 1;
+    text-shadow: 0 0 40px rgba(167,139,250,.3);
+}
+
+.hero h1 span { color: #c7a5f7; }
+
+.hero-description {
+    max-width: 500px;
+    margin: 25px auto;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.by {
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 35px;
+}
+
+/* GENERAL SECTIONS */
+
+section { padding: 85px 7%; }
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading small {
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 8vw, 60px);
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+/* EMOTIONS */
+
+.emotion-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.emotion-card {
+    min-height: 160px;
+    padding: 25px 15px;
+    border: 1px solid rgba(255,255,255,.09);
+    background: var(--glass);
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.emotion-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(190,145,255,.5);
+    background: rgba(150,100,210,.12);
+    box-shadow: 0 15px 40px rgba(0,0,0,.2);
+}
+
+.emotion-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.emotion-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.emotion-card p {
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 8px;
+}
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,.8);
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+    animation: modalFade .4s ease;
+}
+
+@keyframes modalFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-box {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 40px 30px;
+    background: #171025;
+    border: 1px solid rgba(210,170,255,.25);
+    border-radius: 20px;
+    text-align: center;
+    animation: modalUp .5s ease;
+}
+
+@keyframes modalUp {
+    from { transform: translateY(30px) scale(.95); }
+    to { transform: translateY(0) scale(1); }
+}
+
+.modal-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.modal-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 37px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.modal-box p {
+    color: #c5b9d3;
+    line-height: 2;
+    font-size: 13px;
+    white-space: pre-line;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    border: 0;
+    background: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* QUOTES */
+
+.quote-section {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255,255,255,.018);
+}
+
+.quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 75px;
+    color: #bd91ec;
+    line-height: .8;
+}
+
+#quoteText {
+    max-width: 650px;
+    min-height: 110px;
+    margin: 20px auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 5vw, 36px);
+    line-height: 1.5;
+    color: #eee2ff;
+    transition: opacity .4s;
+}
+
+.quote-author {
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.quote-button {
+    margin-top: 30px;
+    padding: 11px 25px;
+    border: 1px solid rgba(200,160,255,.35);
+    border-radius: 30px;
+    color: white;
+    background: transparent;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+/* STORY */
+
+.story-container {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px;
+    background: var(--glass);
+    text-align: center;
+}
+
+.story-number {
+    color: var(--pink);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.story-container h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 400;
+    margin: 18px 0;
+}
+
+#storyText {
+    color: #c3b8d0;
+    font-size: 13px;
+    line-height: 2.2;
+    white-space: pre-line;
+    min-height: 180px;
+}
+
+.story-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.story-controls button {
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: 1px solid rgba(200,160,255,.35);
+    background: rgba(160,100,220,.1);
+    color: white;
+    cursor: pointer;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* VOTING */
+
+.vote-container {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px 20px;
+    border: 1px solid rgba(200,160,255,.2);
+    border-radius: 20px;
+    background: rgba(255,255,255,.04);
+    text-align: center;
+}
+
+.vote-total {
+    color: #d9b8ff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.vote-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.vote-options button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 5px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 15px;
+    background: rgba(255,255,255,.04);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.vote-options button:hover {
+    transform: translateY(-5px);
+    border-color: #c084fc;
+    background: rgba(160,100,220,.15);
+}
+
+.vote-options button:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.vote-options button span {
+    font-size: 10px;
+    color: #c5b9d3;
+}
+
+.vote-options button strong {
+    font-size: 15px;
+    color: #d8b4fe;
+}
+
+#voteMessage {
+    margin-top: 25px;
+    color: #c5a6e9;
+    font-size: 11px;
+}
+
+/* VISITOR COUNTER */
+
+.visitor-box {
+    max-width: 350px;
+    margin: auto;
+    padding: 35px 20px;
+    text-align: center;
+    border: 1px solid rgba(200,160,255,.25);
+    border-radius: 20px;
+    background: rgba(255,255,255,.04);
+    box-shadow: 0 0 30px rgba(150,80,255,.08);
+}
+
+.visitor-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+#visitorCount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    color: #d8b4fe;
+}
+
+.visitor-box p {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin: 8px 0;
+}
+
+.visitor-box small {
+    color: #aaa0bd;
+    font-size: 10px;
+}
+
+/* MUSIC */
+
+.music-box {
+    position: fixed;
+    z-index: 50;
+    bottom: 20px;
+    right: 20px;
+}
+
+.music-button {
+    padding: 13px 19px;
+    border: 1px solid rgba(210,170,255,.35);
+    background: rgba(25,15,40,.85);
+    backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 11px;
+    box-shadow: 0 5px 25px rgba(0,0,0,.3);
+}
+
+.music-button.playing {
+    box-shadow: 0 0 25px rgba(180,120,255,.35);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 55px 20px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    text-align: center;
+}
+
+footer h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+}
+
+footer .footer-credit {
+    color: var(--pink);
+    margin-top: 25px;
+    letter-spacing: 4px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+    nav { padding: 20px 6%; }
+
+    .emotion-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .emotion-card {
+        min-height: 140px;
+        padding: 20px 10px;
+    }
+
+    section { padding: 70px 6%; }
+
+    .story-container { padding: 25px 18px; }
+
+    .black-hole {
+        width: 160px;
+        height: 160px;
+        top: 17%;
+        right: -35px;
+        opacity: .65;
+    }
+
+    .black-hole-core { inset: 40px; }
+
+    .intro-content h1 { letter-spacing: 8px; }
+
+    @keyframes titleReveal {
+        to {
+            opacity: 1;
+            filter: blur(0);
+            letter-spacing: 12px;
+        }
+    }
+}
+
+@media(max-width:450px) {
+    .vote-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="aurora one"></div>
+<div class="aurora two"></div>
+
+<div class="black-hole">
+    <div class="black-hole-core"></div>
+</div>
+
+<canvas id="spaceCanvas"></canvas>
+<div id="stars"></div>
+
+<!-- INTRO -->
+
+<div class="intro-screen" id="introScreen">
+    <div class="intro-light"></div>
+
+    <div class="intro-content">
+        <div class="intro-label">SELAMAT DATANG DI RUANG RASA</div>
+        <h1>RASA</h1>
+        <div class="intro-line"></div>
+        <div class="intro-credit">BY BRUHH 🥀</div>
+
+        <p>
+            Ada cerita yang tidak pernah selesai.
+            Ada perasaan yang tidak selalu bisa dijelaskan.
+            Dan ada hati yang hanya ingin dimengerti.
+        </p>
+
+        <button class="intro-button" onclick="enterWebsite()">
+            BUKA CERITA ✦
+        </button>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">RA<span>SA</span></div>
+    <div class="nav-credit">BY BRUHH 🥀</div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">SEBUAH RUANG UNTUK MERASA</div>
+        <h1>RA<span>SA</span></h1>
+
+        <p class="hero-description">
+            Tidak semua hal harus dijelaskan dengan kata-kata.
+            Terkadang, hati hanya ingin didengar tanpa harus
+            menjelaskan mengapa ia merasa seperti itu.
+        </p>
+
+        <div class="by">BY BRUHH 🥀</div>
+    </div>
+</header>
+
+<!-- EMOTIONS -->
+
+<section id="perasaan">
+    <div class="section-heading">
+        <small>KENALI APA YANG KAMU RASAKAN</small>
+        <h2>Ruang Perasaan</h2>
+        <p>Pilih satu. Mungkin ada sesuatu yang ingin disampaikan hatimu.</p>
+    </div>
+
+    <div class="emotion-grid">
+
+        <div class="emotion-card" onclick="openEmotion(0)">
+            <div class="emotion-icon">🔥</div>
+            <h3>Marah</h3>
+            <p>Ketika semuanya terasa melelahkan.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(1)">
+            <div class="emotion-icon">🌊</div>
+            <h3>Sedih</h3>
+            <p>Ketika hati tidak baik-baik saja.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(2)">
+            <div class="emotion-icon">☀️</div>
+            <h3>Bahagia</h3>
+            <p>Ketika dunia terasa lebih indah.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(3)">
+            <div class="emotion-icon">🌙</div>
+            <h3>Rindu</h3>
+            <p>Ketika seseorang hadir dalam pikiran.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(4)">
+            <div class="emotion-icon">🥀</div>
+            <h3>Kecewa</h3>
+            <p>Ketika harapan tidak sesuai kenyataan.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(5)">
+            <div class="emotion-icon">🖤</div>
+            <h3>Kesepian</h3>
+            <p>Ketika ramai pun terasa kosong.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(6)">
+            <div class="emotion-icon">❤️</div>
+            <h3>Cinta</h3>
+            <p>Ketika seseorang menjadi istimewa.</p>
+        </div>
+
+        <div class="emotion-card" onclick="openEmotion(7)">
+            <div class="emotion-icon">🕊️</div>
+            <h3>Ikhlas</h3>
+            <p>Ketika hati belajar menerima.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- EMOTION MODAL -->
+
+<div class="modal" id="emotionModal" onclick="closeEmotionOutside(event)">
+    <div class="modal-box">
+        <button class="close-modal" onclick="closeEmotion()">×</button>
+        <div class="modal-icon" id="modalIcon"></div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+    </div>
+</div>
+
+<!-- QUOTES -->
+
+<section class="quote-section">
+    <div class="section-heading">
+        <small>SEBUAH KALIMAT UNTUK HATI</small>
+        <h2>Sepotong Makna</h2>
+    </div>
+
+    <div class="quote-mark">“</div>
+    <p id="quoteText">Tidak semua yang diam berarti tidak memiliki cerita.</p>
+    <div class="quote-author">— RASA</div>
+
+    <button class="quote-button" onclick="nextQuote()">
+        KALIMAT BERIKUTNYA ↗
+    </button>
+</section>
+
+<!-- STORY -->
+
+<section id="cerita">
+    <div class="section-heading">
+        <small>EMPAT BAGIAN DARI SEBUAH PERJALANAN</small>
+        <h2>Tentang Kehidupan</h2>
+        <p>Setiap orang punya cerita yang tidak selalu terlihat.</p>
+    </div>
+
+    <div class="story-container">
+        <div class="story-number" id="storyNumber">BAGIAN 01 / 04</div>
+        <h3 id="storyTitle">Tentang Awal</h3>
+        <p id="storyText"></p>
+
+        <div class="story-controls">
+            <button onclick="previousStory()">← KEMBALI</button>
+            <button onclick="nextStory()">BERIKUTNYA →</button>
+        </div>
+    </div>
+</section>
+
+<!-- VOTING -->
+
+<section id="voting">
+    <div class="section-heading">
+        <small>SUARA PARA PENGUNJUNG</small>
+        <h2>Bagaimana Perasaanmu?</h2>
+        <p>Pilih satu reaksi untuk RASA.</p>
+    </div>
+
+    <div class="vote-container">
+        <div class="vote-total">
+            TOTAL VOTE: <span id="totalVotes">448</span>
+        </div>
+
+        <div class="vote-options">
+            <button data-vote="like" onclick="castVote('like')">
+                👍
+                <span>Suka</span>
+                <strong id="likeCount">87</strong>
+            </button>
+
+            <button data-vote="dislike" onclick="castVote('dislike')">
+                👎
+                <span>Tidak Suka</span>
+                <strong id="dislikeCount">23</strong>
+            </button>
+
+            <button data-vote="broken" onclick="castVote('broken')">
+                💔
+                <span>Menyentuh</span>
+                <strong id="brokenCount">142</strong>
+            </button>
+
+            <button data-vote="love" onclick="castVote('love')">
+                ❤️
+                <span>Sangat Suka</span>
+                <strong id="loveCount">196</strong>
+            </button>
+        </div>
+
+        <p id="voteMessage">Suaramu berarti bagi RASA 🥀</p>
+    </div>
+</section>
+
+<!-- VISITOR COUNTER -->
+
+<section id="visitorSection">
+    <div class="section-heading">
+        <small>TERIMA KASIH SUDAH MAMPIR</small>
+        <h2>Pengunjung RASA</h2>
+        <p>Setiap kunjungan punya arti tersendiri.</p>
+    </div>
+
+    <div class="visitor-box">
+        <div class="visitor-icon">👥</div>
+        <div id="visitorCount">1.257</div>
+        <p>Total Pengunjung</p>
+        <small>Setiap kunjungan berarti 🥀</small>
+    </div>
+</section>
+
+<!-- MUSIC -->
+
+<div class="music-box">
+    <button class="music-button" id="musicButton" onclick="toggleMusic()">
+        ♫ PUTAR MUSIK
+    </button>
+</div>
+
+<audio id="backgroundMusic" loop preload="none">
+    <source src="https://orangefreesounds.com/wp-content/uploads/2025/04/Emotional-romantic-piano-music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FOOTER -->
+
+<footer>
+    <h2>RASA</h2>
+    <p>SEBUAH RUANG KECIL UNTUK SEGALA PERASAAN.</p>
+    <p>Music: Emotional Romantic Piano — Alexander Blu</p>
+    <p class="footer-credit">BY BRUHH 🥀</p>
+</footer>
+
+<script>
+
+/* INTRO */
+
+function enterWebsite() {
+    const intro = document.getElementById("introScreen");
+
+    intro.classList.add("leaving");
+
+    setTimeout(() => {
+        intro.style.display = "none";
+    }, 1500);
+}
+
+/* BACKGROUND STARS */
+
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 100; i++) {
+    const star = document.createElement("div");
+
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 4 + "s";
+    star.style.animationDuration = (2 + Math.random() * 4) + "s";
+
+    stars.appendChild(star);
+}
+
+/* SHOOTING STARS */
+
+const spaceCanvas = document.getElementById("spaceCanvas");
+const ctx = spaceCanvas.getContext("2d");
+
+let shootingStars = [];
+
+function resizeSpace() {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+    spaceCanvas.width = window.innerWidth * ratio;
+    spaceCanvas.height = window.innerHeight * ratio;
+
+    spaceCanvas.style.width = window.innerWidth + "px";
+    spaceCanvas.style.height = window.innerHeight + "px";
+
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+}
+
+function createShootingStar() {
+    return {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight * 0.55,
+        length: Math.random() * 18 + 10,
+        speed: Math.random() * 5 + 7,
+        size: Math.random() * 1.5 + 1,
+        opacity: 1,
+        life: 1
+    };
+}
+
+function drawShootingStar(star) {
+    const tailX = star.x - star.length;
+    const tailY = star.y - star.length * 0.55;
+
+    const gradient = ctx.createLinearGradient(
+        tailX, tailY, star.x, star.y
+    );
+
+    gradient.addColorStop(0, "rgba(180,120,255,0)");
+    gradient.addColorStop(1, `rgba(225,190,255,${star.opacity})`);
+
+    ctx.beginPath();
+    ctx.moveTo(tailX, tailY);
+    ctx.lineTo(star.x, star.y);
+
+    ctx.strokeStyle = gradient;
+    ctx.lineWidth = star.size;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.size + 1, 0, Math.PI * 2);
+
+    ctx.fillStyle = `rgba(255,255,255,${star.opacity})`;
+    ctx.shadowBlur = 12;
+    ctx.shadowColor = "#d8aaff";
+    ctx.fill();
+
+    ctx.shadowBlur = 0;
+}
+
+function animateSpace() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const star = shootingStars[i];
+
+        drawShootingStar(star);
+
+        star.x += star.speed;
+        star.y += star.speed * 0.55;
+        star.life -= 0.018;
+        star.opacity = Math.max(0, star.life);
+
+        if (
+            star.life <= 0 ||
+            star.x > window.innerWidth + 50 ||
+            star.y > window.innerHeight + 50
+        ) {
+            shootingStars.splice(i, 1);
+        }
+    }
+
+    if (Math.random() < 0.025 && shootingStars.length < 3) {
+        shootingStars.push(createShootingStar());
+    }
+
+    requestAnimationFrame(animateSpace);
+}
+
+window.addEventListener("resize", resizeSpace);
+resizeSpace();
+animateSpace();
+
+/* EMOTIONS */
+
+const emotions = [
+{
+icon: "🔥",
+title: "Marah",
+text: `Tidak apa-apa jika hari ini kamu merasa marah.
+
+Mungkin ada banyak hal yang selama ini kamu pendam. Mungkin ada perkataan yang menyakitkan, keadaan yang tidak adil, atau harapan yang terus-menerus tidak terpenuhi.
+
+Namun, jangan biarkan satu perasaan menguasai seluruh perjalananmu.
+
+Kamu boleh berhenti sejenak. Kamu boleh mengambil jarak. Kamu tidak harus menyelesaikan semuanya hari ini.
+
+Belajarlah memahami apa yang sebenarnya membuat hatimu lelah.`
+},
+{
+icon: "🌊",
+title: "Sedih",
+text: `Ada hari ketika semuanya terasa lebih berat dari biasanya.
+
+Kamu mungkin tidak tahu harus bercerita kepada siapa. Bahkan menjelaskan apa yang sedang terjadi pun terkadang terasa sulit.
+
+Tapi kesedihan bukan berarti kamu lemah.
+
+Tidak semua hari harus menjadi hari yang baik. Ada waktunya kamu perlu diam, beristirahat, dan memberi ruang kepada dirimu sendiri.
+
+Jangan lupa, perasaan yang berat tidak harus kamu hadapi sendirian.`
+},
+{
+icon: "☀️",
+title: "Bahagia",
+text: `Bahagia tidak selalu datang dari sesuatu yang besar.
+
+Terkadang, hal sederhana justru menjadi alasan terbaik untuk tersenyum. Percakapan kecil, kabar baik, waktu bersama orang tersayang, atau sekadar hari yang berjalan dengan tenang.
+
+Nikmati hal-hal kecil itu.
+
+Jangan terlalu sibuk menunggu kebahagiaan yang besar sampai lupa menghargai kebahagiaan yang sedang ada.
+
+Kamu pantas menikmati hari-hari baikmu.`
+},
+{
+icon: "🌙",
+title: "Rindu",
+text: `Rindu adalah perasaan yang terkadang sulit dijelaskan.
+
+Seseorang mungkin sudah jauh, waktu mungkin sudah berubah, tetapi kenangan masih bisa muncul begitu saja.
+
+Ada tempat yang mengingatkanmu kepadanya. Ada lagu yang membawa pikiranmu kembali ke masa lalu.
+
+Tidak semua rindu harus disampaikan.
+
+Kadang, cukup mengakui bahwa seseorang pernah memiliki tempat yang berarti dalam hidupmu.`
+},
+{
+icon: "🥀",
+title: "Kecewa",
+text: `Kecewa sering datang ketika kenyataan tidak berjalan seperti yang kita harapkan.
+
+Kamu sudah berusaha memahami. Kamu sudah mencoba bertahan. Namun, hasilnya tidak selalu sesuai dengan apa yang kamu bayangkan.
+
+Jangan menyalahkan dirimu karena pernah berharap.
+
+Berharap bukan kesalahan. Mempercayai seseorang juga bukan sesuatu yang memalukan.
+
+Ambil pelajarannya, jaga batasanmu, dan perlahan lanjutkan perjalananmu.`
+},
+{
+icon: "🖤",
+title: "Kesepian",
+text: `Terkadang, seseorang bisa berada di tengah banyak orang tetapi tetap merasa sendirian.
+
+Bukan karena tidak ada suara, melainkan karena tidak ada yang benar-benar memahami isi pikirannya.
+
+Jika kamu sedang merasakan hal itu, ingatlah bahwa perasaanmu layak didengarkan.
+
+Kamu tidak harus selalu terlihat kuat di hadapan semua orang.
+
+Cobalah membuka ruang untuk berbicara dengan seseorang yang kamu percaya. Kamu tidak perlu menyimpan semuanya sendiri.`
+},
+{
+icon: "❤️",
+title: "Cinta",
+text: `Cinta bukan hanya tentang memiliki seseorang.
+
+Cinta juga tentang menghargai, memahami, dan memberikan ruang bagi seseorang untuk menjadi dirinya sendiri.
+
+Tidak harus selalu sempurna. Tidak harus selalu sepakat dalam segala hal.
+
+Hubungan yang baik membutuhkan komunikasi, rasa hormat, kejujuran, dan usaha dari kedua pihak.
+
+Jangan sampai dalam mencintai seseorang, kamu justru melupakan pentingnya menghargai dirimu sendiri.`
+},
+{
+icon: "🕊️",
+title: "Ikhlas",
+text: `Ikhlas bukan berarti semua yang terjadi tidak pernah menyakitkan.
+
+Ikhlas adalah belajar menerima bahwa ada hal-hal yang memang tidak bisa kita ubah.
+
+Ada cerita yang harus berhenti. Ada harapan yang perlu dilepaskan. Ada masa lalu yang cukup dikenang tanpa harus diulang.
+
+Kamu tidak harus melupakan semuanya untuk bisa melanjutkan hidup.
+
+Pelan-pelan saja. Tidak perlu terburu-buru.
+
+Semoga suatu hari nanti, hatimu menemukan ketenangan.`
+}
+];
+
+function openEmotion(index) {
+    const item = emotions[index];
+
+    document.getElementById("modalIcon").textContent = item.icon;
+    document.getElementById("modalTitle").textContent = item.title;
+    document.getElementById("modalDescription").textContent = item.text;
+
+    document.getElementById("emotionModal").classList.add("show");
+}
+
+function closeEmotion() {
+    document.getElementById("emotionModal").classList.remove("show");
+}
+
+function closeEmotionOutside(event) {
+    if (event.target.id === "emotionModal") {
+        closeEmotion();
+    }
+}
+
+/* QUOTES */
+
+const quotes = [
+    "Tidak semua yang diam berarti tidak memiliki cerita.",
+    "Kadang yang paling sulit bukan melupakan, tetapi menerima.",
+    "Tidak apa-apa berjalan pelan, selama kamu tidak menyerah pada dirimu sendiri.",
+    "Beberapa kenangan memang tidak bisa diulang, hanya bisa dikenang.",
+    "Jangan kehilangan dirimu sendiri hanya karena ingin dimengerti orang lain.",
+    "Ada hal yang tidak perlu dipaksakan untuk tetap tinggal.",
+    "Kamu tidak harus selalu kuat untuk menjadi seseorang yang hebat.",
+    "Waktu tidak menghapus semuanya, tetapi mengajarkan kita cara menerima.",
+    "Tidak semua perpisahan berarti sebuah kegagalan.",
+    "Hargai dirimu, bahkan ketika dunia sedang tidak memahami dirimu.",
+    "Terkadang ketenangan adalah jawaban yang selama ini dicari.",
+    "Terima kasih sudah bertahan melewati hari-hari yang tidak mudah."
+];
+
+let quoteIndex = 0;
+
+function nextQuote() {
+    const text = document.getElementById("quoteText");
+
+    text.style.opacity = 0;
+
+    setTimeout(() => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        text.textContent = quotes[quoteIndex];
+        text.style.opacity = 1;
+    }, 350);
+}
+
+setInterval(nextQuote, 9000);
+
+/* STORIES */
+
+const stories = [
+{
+title: "Tentang Awal",
+text: `Setiap perjalanan selalu memiliki permulaan.
+
+Ada masa ketika kita belum memahami banyak hal. Kita hanya berjalan, mencoba sesuatu yang baru, dan berharap semuanya akan berjalan sesuai keinginan.
+
+Kita bertemu orang-orang baru. Mengenal banyak cerita. Mengumpulkan pengalaman yang perlahan membentuk siapa diri kita hari ini.
+
+Tidak semua awal terasa indah, tetapi setiap awal memberikan kesempatan untuk belajar.`
+},
+{
+title: "Tentang Luka",
+text: `Seiring waktu, kita mulai memahami bahwa tidak semua hal berjalan sesuai harapan.
+
+Ada perkataan yang membekas. Ada kepercayaan yang berubah. Ada keadaan yang membuat kita harus belajar lebih banyak tentang kehidupan.
+
+Namun, pengalaman sulit bukanlah keseluruhan cerita kita.
+
+Kita masih punya kesempatan untuk tumbuh, memperbaiki langkah, dan menemukan kembali hal-hal yang membuat hidup terasa berarti.`
+},
+{
+title: "Tentang Perubahan",
+text: `Suatu hari, kita menyadari bahwa banyak hal telah berubah.
+
+Cara berpikir kita berbeda. Cara memandang kehidupan pun tidak lagi sama.
+
+Kita mulai memahami bahwa tidak semua orang akan tinggal selamanya. Tidak semua rencana harus terjadi. Dan tidak semua pertanyaan harus memiliki jawaban.
+
+Perubahan memang tidak selalu mudah, tetapi terkadang perubahan adalah bagian dari perjalanan menuju kedewasaan.`
+},
+{
+title: "Tentang Hari Esok",
+text: `Pada akhirnya, kehidupan tetap berjalan.
+
+Masih ada hari esok yang belum kita kenal. Masih ada pengalaman baru yang belum kita temui. Masih ada kesempatan untuk membuat cerita yang berbeda.
+
+Jangan biarkan satu halaman yang menyedihkan membuatmu berhenti membaca seluruh buku kehidupanmu.
+
+Teruslah melangkah, walaupun perlahan.
+
+Karena ceritamu belum selesai.`
+}
+];
+
+let storyIndex = 0;
+
+function showStory() {
+    const story = stories[storyIndex];
+
+    document.getElementById("storyNumber").textContent =
+        "BAGIAN 0" + (storyIndex + 1) + " / 04";
+
+    document.getElementById("storyTitle").textContent = story.title;
+    document.getElementById("storyText").textContent = story.text;
+}
+
+function nextStory() {
+    storyIndex = (storyIndex + 1) % stories.length;
+    showStory();
+}
+
+function previousStory() {
+    storyIndex = (storyIndex - 1 + stories.length) % stories.length;
+    showStory();
+}
+
+showStory();
+
+/* VOTING SYSTEM */
+
+const defaultVotes = {
+    like: 87,
+    dislike: 23,
+    broken: 142,
+    love: 196
+};
+
+let votes;
+
+try {
+    votes = JSON.parse(localStorage.getItem("rasa_votes"));
+} catch (error) {
+    votes = null;
+}
+
+if (
+    !votes ||
+    typeof votes.like !== "number" ||
+    typeof votes.dislike !== "number" ||
+    typeof votes.broken !== "number" ||
+    typeof votes.love !== "number"
+) {
+    votes = {...defaultVotes};
+    localStorage.setItem("rasa_votes", JSON.stringify(votes));
+}
+
+function updateVotes() {
+    document.getElementById("likeCount").textContent = votes.like;
+    document.getElementById("dislikeCount").textContent = votes.dislike;
+    document.getElementById("brokenCount").textContent = votes.broken;
+    document.getElementById("loveCount").textContent = votes.love;
+
+    const total =
+        votes.like +
+        votes.dislike +
+        votes.broken +
+        votes.love;
+
+    document.getElementById("totalVotes").textContent =
+        total.toLocaleString("id-ID");
+}
+
+function castVote(type) {
+    if (localStorage.getItem("rasa_already_voted")) {
+        document.getElementById("voteMessage").textContent =
+            "Kamu sudah memberikan vote. Terima kasih! 🥀";
+        return;
+    }
+
+    if (!Object.hasOwn(votes, type)) return;
+
+    votes[type]++;
+
+    localStorage.setItem("rasa_votes", JSON.stringify(votes));
+    localStorage.setItem("rasa_already_voted", "true");
+
+    updateVotes();
+
+    document.querySelectorAll(".vote-options button").forEach(button => {
+        button.disabled = true;
+    });
+
+    document.getElementById("voteMessage").textContent =
+        "Terima kasih sudah memberikan vote! ❤️";
+}
+
+updateVotes();
+
+if (localStorage.getItem("rasa_already_voted")) {
+    document.querySelectorAll(".vote-options button").forEach(button => {
+        button.disabled = true;
+    });
+
+    document.getElementById("voteMessage").textContent =
+        "Kamu sudah memberikan vote. Terima kasih! 🥀";
+}
+
+/* VISITOR COUNTER */
+
+const visitorKey = "rasa_visitors";
+const visitSessionKey = "rasa_visited";
+
+let visitorCount = Number(localStorage.getItem(visitorKey));
+
+if (!Number.isFinite(visitorCount) || visitorCount < 1257) {
+    visitorCount = 1257;
+}
+
+if (!sessionStorage.getItem(visitSessionKey)) {
+    visitorCount++;
+
+    localStorage.setItem(visitorKey, visitorCount);
+    sessionStorage.setItem(visitSessionKey, "true");
+}
+
+document.getElementById("visitorCount").textContent =
+    visitorCount.toLocaleString("id-ID");
+
+/* MUSIC */
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+music.volume = 0.35;
+
+async function toggleMusic() {
+    if (music.paused) {
+        try {
+            await music.play();
+
+            musicButton.textContent = "♫ JEDA MUSIK";
+            musicButton.classList.add("playing");
+        } catch (error) {
+            musicButton.textContent = "MUSIK TIDAK TERSEDIA";
+        }
+    } else {
+        music.pause();
+
+        musicButton.textContent = "♫ PUTAR MUSIK";
+        musicButton.classList.remove("playing");
+    }
+}
+
+music.addEventListener("ended", () => {
+    musicButton.textContent = "♫ PUTAR MUSIK";
+    musicButton.classList.remove("playing");
+});
+
+</script>
+
+</body>
+</html>
